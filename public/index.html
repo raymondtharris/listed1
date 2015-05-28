@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html data-ng-app="ListedApp">
+<head>
+	<title>Listed - Make a list</title>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="lib/purefine/pureFine.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="lib/purefine/pureFine.css"/>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body data-ng-controller="ListedAppController ">
+	<pf-banner-sm class='pf-hero-lg-tx'>ListedApp</pf-banner-sm>
+	<div class="container">
+	<form class="pf-inline-sm" data-ng-submit="addItem()">
+		<input class="pf-textbox" type="text" data-ng-model="newItem"/>
+		<add-button></add-button>
+	</form>
+	<div>
+		<ul class="ul-minimal">
+			<pf-li ng-repeat="items in UserList track by $index">{{items.objectText}}</pf-li>
+		</ul>
+	</div>
+	</div>
+</body>
+</html>
